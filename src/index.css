@@ -2,41 +2,65 @@
 @tailwind components;
 @tailwind utilities;
 
-/* Definition of the design system. All colors, gradients, fonts, etc should be defined here. 
-All colors MUST be HSL.
-*/
+/* Ajay Arya Portfolio Design System - Light Mode */
 
 @layer base {
   :root {
+    /* Core Colors - Light Theme */
     --background: 0 0% 100%;
-    --foreground: 222.2 84% 4.9%;
-
+    --foreground: 220 26% 14%;
+    
+    /* Content Writing Brand Colors */
+    --primary: 220 26% 14%;
+    --primary-foreground: 0 0% 100%;
+    --primary-hover: 220 26% 20%;
+    
+    /* Professional Accent Colors */
+    --accent-blue: 213 94% 68%;
+    --accent-blue-soft: 213 94% 95%;
+    --accent-gray: 220 13% 91%;
+    --accent-gray-dark: 220 13% 69%;
+    
+    /* Content Areas */
     --card: 0 0% 100%;
-    --card-foreground: 222.2 84% 4.9%;
-
-    --popover: 0 0% 100%;
-    --popover-foreground: 222.2 84% 4.9%;
-
-    --primary: 222.2 47.4% 11.2%;
-    --primary-foreground: 210 40% 98%;
-
-    --secondary: 210 40% 96.1%;
-    --secondary-foreground: 222.2 47.4% 11.2%;
-
-    --muted: 210 40% 96.1%;
-    --muted-foreground: 215.4 16.3% 46.9%;
-
-    --accent: 210 40% 96.1%;
-    --accent-foreground: 222.2 47.4% 11.2%;
-
-    --destructive: 0 84.2% 60.2%;
-    --destructive-foreground: 210 40% 98%;
-
-    --border: 214.3 31.8% 91.4%;
-    --input: 214.3 31.8% 91.4%;
-    --ring: 222.2 84% 4.9%;
-
-    --radius: 0.5rem;
+    --card-foreground: 220 26% 14%;
+    --card-border: 220 13% 91%;
+    
+    /* Interactive Elements */
+    --secondary: 220 13% 96%;
+    --secondary-foreground: 220 26% 14%;
+    --secondary-hover: 220 13% 91%;
+    
+    --muted: 220 13% 96%;
+    --muted-foreground: 220 13% 46%;
+    
+    --accent: 213 94% 68%;
+    --accent-foreground: 0 0% 100%;
+    
+    /* Status Colors */
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 100%;
+    
+    /* Form Elements */
+    --border: 220 13% 91%;
+    --input: 220 13% 91%;
+    --ring: 213 94% 68%;
+    
+    /* Layout */
+    --radius: 0.75rem;
+    
+    /* Typography Scale */
+    --font-heading: 'Poppins', system-ui, sans-serif;
+    --font-body: 'Inter', system-ui, sans-serif;
+    
+    /* Spacing & Shadows */
+    --shadow-soft: 0 2px 8px -2px hsl(220 26% 14% / 0.08);
+    --shadow-medium: 0 4px 16px -4px hsl(220 26% 14% / 0.12);
+    --shadow-large: 0 8px 32px -8px hsl(220 26% 14% / 0.16);
+    
+    /* Content Writer Specific */
+    --hero-gradient: linear-gradient(135deg, hsl(0 0% 100%) 0%, hsl(213 94% 98%) 100%);
+    --section-gradient: linear-gradient(180deg, hsl(0 0% 100%) 0%, hsl(220 13% 98%) 100%);
 
     --sidebar-background: 0 0% 98%;
 
