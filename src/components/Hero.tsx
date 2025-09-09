@@ -1,56 +1,40 @@
 import { Button } from "./ui/button";
 import { ArrowDown, Download, Mail } from "lucide-react";
 import profileImage from "@/assets/ajay-profile.jpg";
-
 const Hero = () => {
   const scrollToSection = (sectionId: string) => {
     const element = document.getElementById(sectionId);
     if (element) {
-      element.scrollIntoView({ behavior: "smooth" });
+      element.scrollIntoView({
+        behavior: "smooth"
+      });
     }
   };
-
-  return (
-    <section id="home" className="min-h-screen bg-hero-gradient flex items-center pt-16">
+  return <section id="home" className="min-h-screen bg-hero-gradient flex items-center pt-16">
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
         <div className="grid lg:grid-cols-2 gap-12 items-center">
           {/* Content */}
           <div className="space-y-8">
             <div className="space-y-4">
-              <p className="text-accent-blue font-body font-medium tracking-wide uppercase text-sm">
+              <p className="font-body font-medium tracking-wide uppercase text-sm text-slate-950">
                 Content Writer & Storyteller
               </p>
-              <h1 className="font-heading font-bold text-5xl lg:text-6xl xl:text-7xl text-primary leading-tight">
+              <h1 className="font-heading font-bold text-5xl xl:text-7xl text-primary leading-tight lg:text-4xl">
                 Hi There,<br />
-                I'm <span className="text-accent-blue">Ajay Arya</span>
+                I'm <span className="text-sky-500">Ajay Arya</span>
               </h1>
-              <p className="text-xl lg:text-2xl text-muted-foreground font-body font-light leading-relaxed max-w-2xl">
-                Crafting words into stories that inspire, inform, and engage.
-              </p>
+              <p className="text-xl font-body leading-relaxed max-w-2xl font-medium text-slate-800 lg:text-xl">Crafting words to tell the fresh tale of eternal idea and boundless creativity.</p>
             </div>
 
             <div className="space-y-6">
-              <p className="text-lg text-foreground font-body leading-relaxed max-w-2xl">
-                I am a content writer who loves to play with words, weaving them into tales that spread their light eternally. 
-                Writing is my way of blending emotions, information, and creativity into powerful expressions.
-              </p>
+              <p className="text-foreground font-body leading-relaxed max-w-2xl text-lg">I am a content writer who breathes life into words, shaping them into stories that linger beyond moments. For me, writing is living expression. It is the art of  fusing imagination, insight, and emotion that narrates the beauty of vision from pages to faces.</p>
 
               <div className="flex flex-col sm:flex-row gap-4">
-                <Button 
-                  variant="cta" 
-                  size="lg"
-                  onClick={() => scrollToSection("portfolio")}
-                  className="w-full sm:w-auto"
-                >
+                <Button variant="cta" size="lg" onClick={() => scrollToSection("portfolio")} className="w-full sm:w-auto">
                   View My Portfolio
                   <ArrowDown className="ml-2 h-5 w-5" />
                 </Button>
-                <Button 
-                  variant="outline" 
-                  size="lg"
-                  onClick={() => scrollToSection("contact")}
-                  className="w-full sm:w-auto"
-                >
+                <Button variant="outline" size="lg" onClick={() => scrollToSection("contact")} className="w-full sm:w-auto">
                   <Mail className="mr-2 h-5 w-5" />
                   Get In Touch
                 </Button>
@@ -78,11 +62,7 @@ const Hero = () => {
           <div className="flex justify-center lg:justify-end">
             <div className="relative">
               <div className="w-80 h-80 lg:w-96 lg:h-96 rounded-full overflow-hidden shadow-large border-8 border-background">
-                <img 
-                  src={profileImage} 
-                  alt="Ajay Arya - Content Writer"
-                  className="w-full h-full object-cover"
-                />
+                <img src={profileImage} alt="Ajay Arya - Content Writer" className="w-full h-full object-cover" />
               </div>
               {/* Decorative Elements */}
               <div className="absolute -top-4 -right-4 w-24 h-24 bg-accent-blue-soft rounded-full blur-xl opacity-60"></div>
@@ -91,8 +71,6 @@ const Hero = () => {
           </div>
         </div>
       </div>
-    </section>
-  );
+    </section>;
 };
-
 export default Hero;
