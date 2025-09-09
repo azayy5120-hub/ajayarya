@@ -6,67 +6,50 @@ const Services = () => {
     {
       id: "01",
       title: "Blog Writing",
-      description: "Engaging, SEO-optimized blog posts that drive traffic and build authority in your niche.",
+      description: "Engaging, SEO-optimized blog posts that drive traffic and build authority.",
       icon: BookOpen,
       features: [
         "SEO-optimized content",
         "Keyword research included",
         "Engaging storytelling",
         "Call-to-action optimization"
-      ],
-      deliverables: "1000-2000 words per blog post"
+      ]
     },
     {
       id: "02", 
       title: "Article Writing",
-      description: "Well-researched, informative articles that establish thought leadership and expertise.",
+      description: "Well-researched, informative articles that establish thought leadership.",
       icon: FileText,
       features: [
         "In-depth research",
         "Professional tone",
         "Fact-checked content",
         "Industry-specific knowledge"
-      ],
-      deliverables: "800-1500 words per article"
+      ]
     },
     {
       id: "03",
-      title: "Post Writing",
-      description: "Social media and web posts that capture attention and drive engagement across platforms.",
-      icon: Edit3,
-      features: [
-        "Platform-specific optimization",
-        "Hashtag strategy",
-        "Visual content suggestions",
-        "Engagement-focused writing"
-      ],
-      deliverables: "50-300 words per post"
-    },
-    {
-      id: "04",
       title: "Creative Writing",
-      description: "Expressive content that tells your brand story through compelling narratives and emotions.",
+      description: "Expressive content that tells your brand story through compelling narratives.",
       icon: Sparkles,
       features: [
         "Brand storytelling",
         "Emotional connection",
         "Unique voice development",
         "Creative concepts"
-      ],
-      deliverables: "Custom length based on project"
+      ]
     },
     {
-      id: "05",
+      id: "04",
       title: "Freelance Writing",
-      description: "Flexible writing services tailored to your specific project needs and requirements.",
+      description: "Flexible writing services tailored to your specific project needs.",
       icon: Briefcase,
       features: [
         "Custom project scope",
         "Flexible timelines",
         "Multiple revisions",
         "Ongoing support"
-      ],
-      deliverables: "Varies by project requirements"
+      ]
     }
   ];
 
@@ -85,67 +68,49 @@ const Services = () => {
             Services
           </p>
           <h2 className="font-heading font-bold text-4xl lg:text-5xl text-primary leading-tight mb-6">
-            How I Can <span className="text-accent-blue">Help</span> You
+            How I Can <span className="text-accent-blue">Help</span>
           </h2>
-          <p className="text-lg text-muted-foreground font-body leading-relaxed max-w-3xl mx-auto">
-            From concept to completion, I offer comprehensive writing services that help your brand 
-            communicate effectively and connect meaningfully with your audience.
+          <p className="text-lg text-muted-foreground font-body leading-relaxed max-w-2xl mx-auto">
+            Quality content that connects with your audience and drives results.
           </p>
         </div>
 
-        <div className="grid lg:grid-cols-2 gap-8 mb-16">
+        <div className="grid lg:grid-cols-2 gap-6 mb-16">
           {services.map((service, index) => {
             const IconComponent = service.icon;
             return (
               <div 
                 key={index}
-                className="bg-card border border-card-border rounded-xl p-8 shadow-soft hover:shadow-medium transition-all duration-300 group"
+                className="bg-card border border-card-border rounded-xl p-6 shadow-soft hover:shadow-medium transition-all duration-300 group"
               >
                 {/* Header */}
-                <div className="flex items-start gap-6 mb-6">
-                  <div className="w-16 h-16 bg-accent-blue-soft rounded-xl flex items-center justify-center flex-shrink-0 group-hover:scale-110 transition-transform duration-300">
-                    <IconComponent className="w-8 h-8 text-accent-blue" />
+                <div className="flex items-start gap-4 mb-4">
+                  <div className="w-12 h-12 bg-accent-blue-soft rounded-lg flex items-center justify-center flex-shrink-0 group-hover:scale-110 transition-transform duration-300">
+                    <IconComponent className="w-6 h-6 text-accent-blue" />
                   </div>
                   <div className="flex-1">
-                    <div className="flex items-center gap-3 mb-2">
-                      <span className="font-heading font-bold text-accent-blue text-lg">{service.id}</span>
-                      <h3 className="font-heading font-bold text-xl text-primary">{service.title}</h3>
+                    <div className="flex items-center gap-2 mb-1">
+                      <span className="font-heading font-bold text-accent-blue">{service.id}</span>
+                      <h3 className="font-heading font-bold text-lg text-primary">{service.title}</h3>
                     </div>
-                    <p className="text-muted-foreground font-body leading-relaxed">
+                    <p className="text-muted-foreground font-body text-sm leading-relaxed">
                       {service.description}
                     </p>
                   </div>
                 </div>
 
                 {/* Features */}
-                <div className="space-y-4 mb-6">
-                  <h4 className="font-heading font-semibold text-primary">What's Included:</h4>
-                  <div className="grid sm:grid-cols-2 gap-2">
+                <div className="space-y-2">
+                  <div className="grid sm:grid-cols-2 gap-1">
                     {service.features.map((feature, featureIndex) => (
                       <div key={featureIndex} className="flex items-center gap-2">
-                        <div className="w-1.5 h-1.5 bg-accent-blue rounded-full flex-shrink-0"></div>
-                        <span className="text-foreground font-body text-sm">{feature}</span>
+                        <div className="w-1 h-1 bg-accent-blue rounded-full flex-shrink-0"></div>
+                        <span className="text-foreground font-body text-xs">{feature}</span>
                       </div>
                     ))}
                   </div>
                 </div>
 
-                {/* Deliverables */}
-                <div className="bg-accent-gray/30 rounded-lg p-4 mb-6">
-                  <p className="text-foreground font-body text-sm">
-                    <span className="font-semibold">Typical Length:</span> {service.deliverables}
-                  </p>
-                </div>
-
-                {/* CTA */}
-                <Button 
-                  variant="outline" 
-                  className="w-full group/btn"
-                  onClick={scrollToContact}
-                >
-                  Get Started
-                  <ArrowRight className="ml-2 h-4 w-4 group-hover/btn:translate-x-1 transition-transform" />
-                </Button>
               </div>
             );
           })}
