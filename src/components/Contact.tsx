@@ -55,8 +55,8 @@ const Contact = () => {
     {
       icon: Phone,
       label: "Phone",
-      value: "+91 98765 43210",
-      href: "tel:+919876543210",
+      value: "+91 9456114339",
+      href: "tel:+919456114339",
       description: "Available for calls 9 AM - 6 PM IST"
     },
     {
