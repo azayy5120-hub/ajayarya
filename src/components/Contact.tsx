@@ -69,8 +69,8 @@ const Contact = () => {
     {
       icon: ExternalLink,
       label: "Medium",
-      value: "medium.com/@ajayarya",
-      href: "https://medium.com/@ajayarya",
+      value: "medium.com/@ak6713324",
+      href: "https://medium.com/@ak6713324",
       description: "Read my published articles and insights"
     }
   ];
