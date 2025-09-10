@@ -13,7 +13,7 @@ const Portfolio = () => {
         { label: "Engagement Rate", value: "High" }
       ],
       highlights: [
-        "Destination guides for 25+ countries",
+        "Destination Guides Across the Country",
         "Cultural sensitivity and accuracy maintained",
         "SEO optimization with targeted keywords",
         "Consistent brand voice across all content",
