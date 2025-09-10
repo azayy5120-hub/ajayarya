@@ -62,8 +62,8 @@ const Contact = () => {
     {
       icon: Linkedin,
       label: "LinkedIn", 
-      value: "linkedin.com/in/ajayarya",
-      href: "https://linkedin.com/in/ajayarya",
+      value: "linkedin.com/in/ajay-arya-19ba7334b",
+      href: "https://www.linkedin.com/in/ajay-arya-19ba7334b",
       description: "Professional networking and updates"
     },
     {
