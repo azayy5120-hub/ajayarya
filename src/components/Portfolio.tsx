@@ -66,7 +66,7 @@ const Portfolio = () => {
                     {project.title}
                   </h3>
                   <p className="text-lg text-muted-foreground font-body leading-relaxed mb-4">
-                    {project.description}
+                    50+ travel blogs capturing the heart of India, designed to spark wanderlust, showcase hidden gems, and boost SEO performance
                   </p>
                   <div className="flex flex-wrap gap-4 text-sm text-muted-foreground font-body">
                     <div className="flex items-center gap-2">
