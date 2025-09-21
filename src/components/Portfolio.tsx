@@ -152,25 +152,10 @@ const Portfolio = () => {
             </div>
             
             <div className="space-y-6">
-              <div className="bg-accent-gray/20 rounded-lg p-6">
-                <p className="text-foreground font-body italic leading-relaxed mb-4">
-                  "Ajay consistently delivered high-quality travel content that perfectly captured our brand voice. 
-                  His SEO expertise helped improve our content visibility significantly."
+              <div className="bg-accent-gray/20 rounded-lg p-6 text-center">
+                <p className="text-muted-foreground font-body">
+                  Client testimonials coming soon...
                 </p>
-                <div>
-                  <p className="font-heading font-semibold text-primary">Editorial Team</p>
-                  <p className="text-muted-foreground font-body text-sm">WabbitHire</p>
-                </div>
-              </div>
-
-              <div className="text-center">
-                <p className="text-muted-foreground font-body text-sm mb-4">
-                  More testimonials coming soon as I continue to work with amazing clients
-                </p>
-                <Button variant="outline" onClick={scrollToContact}>
-                  Work With Me
-                  <ExternalLink className="ml-2 h-4 w-4" />
-                </Button>
               </div>
             </div>
           </div>
