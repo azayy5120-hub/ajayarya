@@ -16,12 +16,14 @@
     --primary-hover: 0 0% 15%;
     
     /* Vibrant Travel-Inspired Accents */
-    --accent-blue: 200 100% 50%;
-    --accent-blue-soft: 200 100% 95%;
-    --accent-orange: 25 100% 55%;
-    --accent-orange-soft: 25 100% 95%;
-    --accent-green: 142 71% 45%;
-    --accent-green-soft: 142 71% 95%;
+    --accent-blue: 220 100% 60%;
+    --accent-blue-soft: 220 100% 97%;
+    --accent-orange: 20 100% 58%;
+    --accent-orange-soft: 20 100% 97%;
+    --accent-green: 140 60% 50%;
+    --accent-green-soft: 140 60% 97%;
+    --accent-purple: 260 70% 65%;
+    --accent-purple-soft: 260 70% 97%;
     
     /* Minimal Grays */
     --accent-gray: 0 0% 96%;
