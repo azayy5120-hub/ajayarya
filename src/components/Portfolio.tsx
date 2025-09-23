@@ -1,4 +1,4 @@
-import { ExternalLink, Calendar, MapPin, Users, TrendingUp } from "lucide-react";
+import { ExternalLink, Calendar, MapPin, Users, TrendingUp, Globe, Target, Zap } from "lucide-react";
 import { Button } from "./ui/button";
 
 const Portfolio = () => {
@@ -40,72 +40,59 @@ const Portfolio = () => {
   };
 
   return (
-    <section id="portfolio" className="py-20 bg-section-gradient">
-      <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="text-center mb-16">
-          <p className="text-accent-blue font-body font-medium tracking-wide uppercase text-sm mb-4">
-            Portfolio
-          </p>
-          <h2 className="font-heading font-bold text-4xl lg:text-5xl text-primary leading-tight mb-6">
-            My <span className="text-accent-blue">Work</span> Speaks
+    <section id="portfolio" className="py-20 bg-background">
+      <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+        {/* Minimal Header */}
+        <div className="text-center mb-20">
+          <div className="inline-flex items-center gap-2 bg-accent-blue/10 px-4 py-2 rounded-full mb-6">
+            <Globe className="w-4 h-4 text-accent-blue" />
+            <span className="text-accent-blue font-body font-medium text-sm tracking-wide uppercase">Portfolio</span>
+          </div>
+          <h2 className="font-heading font-bold text-5xl lg:text-6xl text-primary leading-tight mb-6">
+            Work
           </h2>
-          <p className="text-lg text-muted-foreground font-body leading-relaxed max-w-3xl mx-auto">
-            Every project is a testament to my commitment to quality, creativity, and results. 
-            Here's a showcase of my professional journey and achievements.
+          <p className="text-xl text-muted-foreground font-body leading-relaxed max-w-2xl mx-auto">
+            Travel content that inspires wanderlust and drives results.
           </p>
         </div>
 
-        {/* Main Portfolio Project */}
-        <div className="mb-16">
+        {/* Main Project - Minimal Design */}
+        <div className="mb-20">
           {portfolioHighlights.map((project, index) => (
-            <div key={index} className="bg-card border border-card-border rounded-xl p-8 shadow-medium">
-              {/* Project Header */}
-              <div className="flex flex-col lg:flex-row lg:items-center gap-6 mb-8">
-                <div className="flex-1">
-                  <h3 className="font-heading font-bold text-2xl lg:text-3xl text-primary mb-3">
-                    {project.title}
-                  </h3>
-                  <p className="text-lg text-muted-foreground font-body leading-relaxed mb-4">
-                    50+ travel blogs capturing the heart of India, designed to spark wanderlust, showcase hidden gems, and boost SEO performance
-                  </p>
-                  <div className="flex flex-wrap gap-4 text-sm text-muted-foreground font-body">
-                    <div className="flex items-center gap-2">
-                      <Calendar className="w-4 h-4" />
-                      <span>{project.period}</span>
-                    </div>
-                    <div className="flex items-center gap-2">
-                      <MapPin className="w-4 h-4" />
-                      <span>Remote</span>
-                    </div>
-                    <div className="flex items-center gap-2">
-                      <TrendingUp className="w-4 h-4" />
-                      <span>{project.type}</span>
-                    </div>
+            <div key={index} className="border-l-4 border-accent-blue pl-8 mb-16">
+              <div className="mb-12">
+                <h3 className="font-heading font-bold text-3xl text-primary mb-4">
+                  Travel Blog Series
+                </h3>
+                <p className="text-xl text-muted-foreground font-body leading-relaxed mb-6">
+                  50+ travel blogs capturing the heart of India, designed to spark wanderlust, showcase hidden gems, and boost SEO performance
+                </p>
+                
+                {/* Clean Metrics */}
+                <div className="grid grid-cols-2 lg:grid-cols-4 gap-8 mb-12">
+                  <div className="text-center">
+                    <div className="font-heading font-bold text-4xl text-accent-blue mb-2">50+</div>
+                    <div className="text-muted-foreground font-body text-sm uppercase tracking-wide">Articles</div>
+                  </div>
+                  <div className="text-center">
+                    <div className="font-heading font-bold text-4xl text-accent-orange mb-2">1,200</div>
+                    <div className="text-muted-foreground font-body text-sm uppercase tracking-wide">Avg Words</div>
+                  </div>
+                  <div className="text-center">
+                    <div className="font-heading font-bold text-4xl text-accent-green mb-2">95%</div>
+                    <div className="text-muted-foreground font-body text-sm uppercase tracking-wide">SEO Score</div>
+                  </div>
+                  <div className="text-center">
+                    <div className="font-heading font-bold text-4xl text-primary mb-2">High</div>
+                    <div className="text-muted-foreground font-body text-sm uppercase tracking-wide">Engagement</div>
                   </div>
                 </div>
-              </div>
 
-              {/* Metrics */}
-              <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6 mb-8">
-                {project.metrics.map((metric, metricIndex) => (
-                  <div key={metricIndex} className="text-center bg-accent-gray/30 rounded-lg p-4">
-                    <div className="font-heading font-bold text-2xl text-accent-blue mb-1">
-                      {metric.value}
-                    </div>
-                    <div className="text-muted-foreground font-body text-sm">
-                      {metric.label}
-                    </div>
-                  </div>
-                ))}
-              </div>
-
-              {/* Project Highlights */}
-              <div className="space-y-6">
-                <h4 className="font-heading font-semibold text-xl text-primary">Project Highlights</h4>
-                <div className="grid md:grid-cols-2 gap-4">
+                {/* Minimal Highlights */}
+                <div className="space-y-4">
                   {project.highlights.map((highlight, highlightIndex) => (
-                    <div key={highlightIndex} className="flex items-start gap-3">
-                      <div className="w-2 h-2 bg-accent-blue rounded-full flex-shrink-0 mt-2"></div>
+                    <div key={highlightIndex} className="flex items-center gap-4">
+                      <div className="w-1 h-1 bg-primary rounded-full"></div>
                       <p className="text-foreground font-body">{highlight}</p>
                     </div>
                   ))}
@@ -115,60 +102,50 @@ const Portfolio = () => {
           ))}
         </div>
 
-        {/* Future Projects Section */}
-        <div className="grid lg:grid-cols-2 gap-8">
-          {/* Upcoming Projects */}
-          <div className="bg-card border border-card-border rounded-xl p-8 shadow-soft">
-            <div className="flex items-center gap-4 mb-6">
-              <div className="w-12 h-12 bg-accent-blue-soft rounded-lg flex items-center justify-center">
-                <Users className="w-6 h-6 text-accent-blue" />
-              </div>
-              <div>
-                <h3 className="font-heading font-bold text-xl text-primary">Future Projects</h3>
-                <p className="text-muted-foreground font-body text-sm">Expanding my portfolio</p>
-              </div>
+        {/* Minimal Two Column Layout */}
+        <div className="grid lg:grid-cols-2 gap-16">
+          {/* Future Projects */}
+          <div>
+            <div className="flex items-center gap-3 mb-8">
+              <Target className="w-6 h-6 text-accent-orange" />
+              <h3 className="font-heading font-bold text-2xl text-primary">Future</h3>
             </div>
             
-            <div className="space-y-3">
+            <div className="space-y-4">
               {upcomingProjects.map((project, index) => (
-                <div key={index} className="flex items-center gap-3 p-3 bg-accent-gray/20 rounded-lg">
-                  <div className="w-2 h-2 bg-accent-blue rounded-full flex-shrink-0"></div>
+                <div key={index} className="flex items-center gap-4 py-3 border-b border-accent-gray last:border-0">
+                  <div className="w-1 h-1 bg-accent-orange rounded-full"></div>
                   <span className="text-foreground font-body">{project}</span>
                 </div>
               ))}
             </div>
           </div>
 
-          {/* Testimonials Placeholder */}
-          <div className="bg-card border border-card-border rounded-xl p-8 shadow-soft">
-            <div className="flex items-center gap-4 mb-6">
-              <div className="w-12 h-12 bg-accent-blue-soft rounded-lg flex items-center justify-center">
-                <ExternalLink className="w-6 h-6 text-accent-blue" />
-              </div>
-              <div>
-                <h3 className="font-heading font-bold text-xl text-primary">Client Feedback</h3>
-                <p className="text-muted-foreground font-body text-sm">What clients say about my work</p>
-              </div>
+          {/* Client Feedback */}
+          <div>
+            <div className="flex items-center gap-3 mb-8">
+              <Zap className="w-6 h-6 text-accent-green" />
+              <h3 className="font-heading font-bold text-2xl text-primary">Feedback</h3>
             </div>
             
-            <div className="space-y-6">
-              <div className="bg-accent-gray/20 rounded-lg p-6 text-center">
-                <p className="text-muted-foreground font-body">
-                  Client testimonials coming soon...
-                </p>
-              </div>
+            <div className="py-12 text-center border border-accent-gray rounded-lg">
+              <p className="text-muted-foreground font-body">
+                Testimonials coming soon
+              </p>
             </div>
           </div>
         </div>
 
-        {/* CTA Section */}
-        <div className="mt-16 text-center bg-card border border-card-border rounded-xl p-8 shadow-soft">
-          <h3 className="font-heading font-bold text-2xl text-primary mb-4">Ready to Create Something Amazing?</h3>
-          <p className="text-lg text-muted-foreground font-body mb-6 max-w-2xl mx-auto">
-            Let's collaborate on your next content project and create something that truly resonates with your audience.
-          </p>
-          <Button variant="cta" size="lg" onClick={scrollToContact}>
-            Start Your Project
+        {/* Minimal CTA */}
+        <div className="mt-24 text-center">
+          <h3 className="font-heading font-bold text-3xl text-primary mb-6">Ready to collaborate?</h3>
+          <Button 
+            variant="default" 
+            size="lg" 
+            onClick={scrollToContact}
+            className="bg-accent-blue hover:bg-accent-blue/90 text-white px-8 py-3"
+          >
+            Start Project
           </Button>
         </div>
       </div>
