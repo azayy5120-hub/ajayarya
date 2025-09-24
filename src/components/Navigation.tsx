@@ -24,24 +24,24 @@ const Navigation = () => {
   ];
 
   return (
-    <nav className="fixed top-0 left-0 right-0 z-50 bg-background/95 backdrop-blur-sm border-b border-card-border">
-      <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex justify-between items-center h-16">
+    <nav className="fixed top-0 left-0 right-0 z-50 bg-background/98 backdrop-blur-md border-b border-border/50">
+      <div className="max-w-5xl mx-auto px-6 lg:px-8">
+        <div className="flex justify-between items-center h-12">
           {/* Logo */}
           <div 
-            className="font-heading font-bold text-xl text-primary cursor-pointer"
+            className="font-heading font-medium text-lg text-primary cursor-pointer tracking-tight"
             onClick={() => scrollToSection("home")}
           >
             Ajay Arya
           </div>
 
           {/* Desktop Navigation */}
-          <div className="hidden md:flex space-x-8">
+          <div className="hidden md:flex space-x-6">
             {navItems.map((item) => (
               <button
                 key={item.id}
                 onClick={() => scrollToSection(item.id)}
-                className="text-muted-foreground hover:text-primary transition-colors font-body text-sm font-medium"
+                className="text-muted-foreground hover:text-primary transition-colors font-body text-sm tracking-wide"
               >
                 {item.label}
               </button>
@@ -61,13 +61,13 @@ const Navigation = () => {
 
         {/* Mobile Navigation */}
         {isMenuOpen && (
-          <div className="md:hidden border-t border-card-border">
-            <div className="py-4 space-y-2">
+          <div className="md:hidden border-t border-border">
+            <div className="py-3 space-y-1">
               {navItems.map((item) => (
                 <button
                   key={item.id}
                   onClick={() => scrollToSection(item.id)}
-                  className="block w-full text-left px-4 py-2 text-muted-foreground hover:text-primary hover:bg-accent-gray/50 rounded-md transition-colors font-body text-sm font-medium"
+                  className="block w-full text-left px-4 py-2 text-muted-foreground hover:text-primary hover:bg-muted rounded transition-colors font-body text-sm"
                 >
                   {item.label}
                 </button>

@@ -2,73 +2,62 @@
 @tailwind components;
 @tailwind utilities;
 
-/* Ajay Arya Portfolio Design System - Minimal B&W with Vibrant Accents */
+/* Ajay Arya Portfolio Design System - Ultra Minimalist & Modern */
 
 @layer base {
   :root {
-    /* Core Colors - Minimal B&W Theme */
+    /* Pure Minimalist Colors */
     --background: 0 0% 100%;
-    --foreground: 0 0% 8%;
+    --foreground: 0 0% 3%;
     
-    /* Minimal Black & White Base */
-    --primary: 0 0% 8%;
+    /* Ultra Clean Typography */
+    --primary: 0 0% 3%;
     --primary-foreground: 0 0% 100%;
-    --primary-hover: 0 0% 15%;
+    --primary-hover: 0 0% 10%;
     
-    /* Vibrant Travel-Inspired Accents */
-    --accent-blue: 220 100% 60%;
-    --accent-blue-soft: 220 100% 97%;
-    --accent-orange: 20 100% 58%;
-    --accent-orange-soft: 20 100% 97%;
-    --accent-green: 140 60% 50%;
-    --accent-green-soft: 140 60% 97%;
-    --accent-purple: 260 70% 65%;
-    --accent-purple-soft: 260 70% 97%;
+    /* Sophisticated Accent */
+    --accent: 0 0% 3%;
+    --accent-foreground: 0 0% 100%;
+    --accent-soft: 0 0% 98%;
     
-    /* Minimal Grays */
-    --accent-gray: 0 0% 96%;
-    --accent-gray-dark: 0 0% 70%;
+    /* Refined Grays */
+    --muted: 0 0% 98%;
+    --muted-foreground: 0 0% 40%;
+    --border: 0 0% 95%;
     
-    /* Clean Content Areas */
+    /* Pure Content Areas */
     --card: 0 0% 100%;
-    --card-foreground: 0 0% 8%;
-    --card-border: 0 0% 90%;
+    --card-foreground: 0 0% 3%;
+    --card-border: 0 0% 95%;
     
     /* Minimal Interactive Elements */
-    --secondary: 0 0% 96%;
-    --secondary-foreground: 0 0% 8%;
-    --secondary-hover: 0 0% 90%;
+    --secondary: 0 0% 98%;
+    --secondary-foreground: 0 0% 3%;
+    --secondary-hover: 0 0% 95%;
     
-    --muted: 0 0% 96%;
-    --muted-foreground: 0 0% 45%;
-    
-    --accent: 200 100% 50%;
-    --accent-foreground: 0 0% 100%;
+    /* Clean Form Elements */
+    --input: 0 0% 100%;
+    --ring: 0 0% 3%;
     
     /* Status Colors */
     --destructive: 0 84% 60%;
     --destructive-foreground: 0 0% 100%;
     
-    /* Clean Form Elements */
-    --border: 0 0% 90%;
-    --input: 0 0% 96%;
-    --ring: 200 100% 50%;
-    
     /* Layout */
-    --radius: 0.5rem;
+    --radius: 0.25rem;
     
-    /* Typography Scale */
-    --font-heading: 'Poppins', system-ui, sans-serif;
-    --font-body: 'Inter', system-ui, sans-serif;
+    /* Modern Typography Scale */
+    --font-heading: 'Inter', -apple-system, BlinkMacSystemFont, system-ui, sans-serif;
+    --font-body: 'Inter', -apple-system, BlinkMacSystemFont, system-ui, sans-serif;
     
-    /* Minimal Shadows */
-    --shadow-soft: 0 1px 3px hsl(0 0% 8% / 0.06);
-    --shadow-medium: 0 4px 12px hsl(0 0% 8% / 0.08);
-    --shadow-large: 0 8px 24px hsl(0 0% 8% / 0.12);
+    /* Subtle Shadows */
+    --shadow-minimal: 0 1px 2px hsl(0 0% 3% / 0.03);
+    --shadow-soft: 0 2px 8px hsl(0 0% 3% / 0.06);
+    --shadow-medium: 0 4px 16px hsl(0 0% 3% / 0.08);
     
     /* Clean Backgrounds */
-    --hero-gradient: linear-gradient(135deg, hsl(0 0% 100%) 0%, hsl(0 0% 98%) 100%);
-    --section-gradient: linear-gradient(180deg, hsl(0 0% 100%) 0%, hsl(0 0% 99%) 100%);
+    --hero-gradient: linear-gradient(180deg, hsl(0 0% 100%) 0%, hsl(0 0% 99%) 100%);
+    --section-gradient: linear-gradient(180deg, hsl(0 0% 100%) 0%, hsl(0 0% 100%) 100%);
 
     --sidebar-background: 0 0% 98%;
 

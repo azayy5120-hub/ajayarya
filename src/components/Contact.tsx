@@ -29,19 +29,17 @@ const Contact = () => {
     setIsSubmitting(true);
 
     try {
-      // Initialize EmailJS with public key
       emailjs.init("ZDMtGhRtiLZVhxbmV");
 
-      // Send email using EmailJS
       await emailjs.send(
-        "service_cd3yvld", // Service ID
-        "template_6nrv8ni", // Template ID
+        "service_cd3yvld",
+        "template_6nrv8ni",
         {
           from_name: formData.name,
           from_email: formData.email,
           subject: formData.subject,
           message: formData.message,
-          to_name: "Ajay Arya", // Your name as recipient
+          to_name: "Ajay Arya",
         }
       );
 
@@ -81,211 +79,214 @@ const Contact = () => {
       label: "Phone",
       value: "+91 9456114339",
       href: "tel:+919456114339",
-      description: "Available for calls 9 AM - 6 PM IST"
+      description: "Available 9 AM - 6 PM IST"
     },
     {
       icon: Linkedin,
       label: "LinkedIn", 
       value: "linkedin.com/in/ajay-arya-19ba7334b",
       href: "https://www.linkedin.com/in/ajay-arya-19ba7334b",
-      description: "Professional networking and updates"
+      description: "Professional networking"
     },
     {
       icon: ExternalLink,
       label: "Medium",
       value: "medium.com/@ak6713324",
       href: "https://medium.com/@ak6713324",
-      description: "Read my published articles and insights"
+      description: "Published articles and insights"
     }
   ];
 
   return (
-    <section id="contact" className="py-20 bg-background">
-      <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="text-center mb-16">
-          <p className="text-accent-blue font-body font-medium tracking-wide uppercase text-sm mb-4">
-            Get In Touch
-          </p>
-          <h2 className="font-heading font-bold text-4xl lg:text-5xl text-primary leading-tight mb-6">
-            Let's <span className="text-accent-blue">Create</span> Together
-          </h2>
-          <p className="text-lg text-muted-foreground font-body leading-relaxed max-w-3xl mx-auto">
-            Have a project in mind? I'd love to hear about it. Whether you need a single blog post or 
-            a comprehensive content strategy, let's discuss how I can help bring your vision to life.
-          </p>
-        </div>
-
-        <div className="grid lg:grid-cols-2 gap-12 items-start">
-          {/* Contact Form */}
-          <div className="bg-card border border-card-border rounded-xl p-8 shadow-soft">
-            <div className="flex items-center gap-3 mb-6">
-              <div className="w-10 h-10 bg-accent-blue-soft rounded-lg flex items-center justify-center">
-                <MessageCircle className="w-5 h-5 text-accent-blue" />
-              </div>
-              <h3 className="font-heading font-bold text-xl text-primary">Send a Message</h3>
-            </div>
-
-            <form onSubmit={handleSubmit} className="space-y-6">
-              <div className="grid sm:grid-cols-2 gap-4">
-                <div>
-                  <label htmlFor="name" className="block text-sm font-medium text-foreground mb-2">
-                    Your Name *
-                  </label>
-                  <Input
-                    id="name"
-                    name="name"
-                    type="text"
-                    required
-                    value={formData.name}
-                    onChange={handleInputChange}
-                    placeholder="John Doe"
-                    className="w-full"
-                  />
-                </div>
-                <div>
-                  <label htmlFor="email" className="block text-sm font-medium text-foreground mb-2">
-                    Email Address *
-                  </label>
-                  <Input
-                    id="email"
-                    name="email"
-                    type="email"
-                    required
-                    value={formData.email}
-                    onChange={handleInputChange}
-                    placeholder="john@example.com"
-                    className="w-full"
-                  />
-                </div>
-              </div>
-
-              <div>
-                <label htmlFor="subject" className="block text-sm font-medium text-foreground mb-2">
-                  Subject *
-                </label>
-                <Input
-                  id="subject"
-                  name="subject"
-                  type="text"
-                  required
-                  value={formData.subject}
-                  onChange={handleInputChange}
-                  placeholder="Blog Writing Project"
-                  className="w-full"
-                />
-              </div>
-
-              <div>
-                <label htmlFor="message" className="block text-sm font-medium text-foreground mb-2">
-                  Message *
-                </label>
-                <Textarea
-                  id="message"
-                  name="message"
-                  required
-                  value={formData.message}
-                  onChange={handleInputChange}
-                  placeholder="Tell me about your project, timeline, and goals..."
-                  rows={6}
-                  className="w-full resize-none"
-                />
-              </div>
-
-              <Button 
-                type="submit" 
-                variant="cta" 
-                size="lg" 
-                className="w-full"
-                disabled={isSubmitting}
-              >
-                {isSubmitting ? (
-                  "Sending..."
-                ) : (
-                  <>
-                    Send Message
-                    <Send className="ml-2 h-4 w-4" />
-                  </>
-                )}
-              </Button>
-            </form>
+    <section id="contact" className="py-16 bg-background border-t border-border">
+      <div className="max-w-5xl mx-auto px-6 lg:px-8">
+        <div className="space-y-12">
+          {/* Header */}
+          <div className="space-y-2">
+            <p className="text-muted-foreground font-body text-sm tracking-wider uppercase">
+              Get In Touch
+            </p>
+            <h2 className="font-heading font-light text-4xl text-primary leading-tight">
+              Let's Create Together
+            </h2>
+            <p className="text-muted-foreground font-body leading-relaxed max-w-2xl">
+              Have a project in mind? I'd love to hear about it. Whether you need a single blog post or 
+              comprehensive content strategy, let's discuss how I can help bring your vision to life.
+            </p>
           </div>
 
-          {/* Contact Information */}
-          <div className="space-y-8">
-            <div className="bg-section-gradient rounded-xl p-8 shadow-soft">
-              <h3 className="font-heading font-bold text-xl text-primary mb-6">Get in Touch</h3>
-              <p className="text-muted-foreground font-body leading-relaxed mb-8">
-                I'm always excited to discuss new projects and opportunities. Feel free to reach out 
-                through any of these channels, and I'll respond as quickly as possible.
-              </p>
-
-              <div className="space-y-6">
-                {contactMethods.map((method, index) => {
-                  const IconComponent = method.icon;
-                  return (
-                    <a
-                      key={index}
-                      href={method.href}
-                      className="flex items-start gap-4 p-4 bg-card rounded-lg border border-card-border hover:shadow-soft transition-all duration-200 group"
-                    >
-                      <div className="w-10 h-10 bg-accent-blue-soft rounded-lg flex items-center justify-center flex-shrink-0 group-hover:scale-110 transition-transform">
-                        <IconComponent className="w-5 h-5 text-accent-blue" />
-                      </div>
-                      <div className="flex-1">
-                        <h4 className="font-heading font-semibold text-primary group-hover:text-accent-blue transition-colors">
-                          {method.label}
-                        </h4>
-                        <p className="text-foreground font-body font-medium text-sm mb-1">
-                          {method.value}
-                        </p>
-                        <p className="text-muted-foreground font-body text-xs">
-                          {method.description}
-                        </p>
-                      </div>
-                    </a>
-                  );
-                })}
+          <div className="grid lg:grid-cols-2 gap-12">
+            {/* Contact Form */}
+            <div className="border border-border rounded p-6 space-y-6">
+              <div className="flex items-center gap-3">
+                <div className="w-6 h-6 bg-muted rounded flex items-center justify-center">
+                  <MessageCircle className="w-4 h-4 text-primary" />
+                </div>
+                <h3 className="font-heading font-medium text-primary">Send a Message</h3>
               </div>
+
+              <form onSubmit={handleSubmit} className="space-y-4">
+                <div className="grid sm:grid-cols-2 gap-4">
+                  <div className="space-y-2">
+                    <label htmlFor="name" className="text-xs font-medium text-muted-foreground uppercase tracking-wider">
+                      Your Name *
+                    </label>
+                    <Input
+                      id="name"
+                      name="name"
+                      type="text"
+                      required
+                      value={formData.name}
+                      onChange={handleInputChange}
+                      placeholder="John Doe"
+                      className="border-border bg-background"
+                    />
+                  </div>
+                  <div className="space-y-2">
+                    <label htmlFor="email" className="text-xs font-medium text-muted-foreground uppercase tracking-wider">
+                      Email Address *
+                    </label>
+                    <Input
+                      id="email"
+                      name="email"
+                      type="email"
+                      required
+                      value={formData.email}
+                      onChange={handleInputChange}
+                      placeholder="john@example.com"
+                      className="border-border bg-background"
+                    />
+                  </div>
+                </div>
+
+                <div className="space-y-2">
+                  <label htmlFor="subject" className="text-xs font-medium text-muted-foreground uppercase tracking-wider">
+                    Subject *
+                  </label>
+                  <Input
+                    id="subject"
+                    name="subject"
+                    type="text"
+                    required
+                    value={formData.subject}
+                    onChange={handleInputChange}
+                    placeholder="Blog Writing Project"
+                    className="border-border bg-background"
+                  />
+                </div>
+
+                <div className="space-y-2">
+                  <label htmlFor="message" className="text-xs font-medium text-muted-foreground uppercase tracking-wider">
+                    Message *
+                  </label>
+                  <Textarea
+                    id="message"
+                    name="message"
+                    required
+                    value={formData.message}
+                    onChange={handleInputChange}
+                    placeholder="Tell me about your project, timeline, and goals..."
+                    rows={5}
+                    className="border-border bg-background resize-none"
+                  />
+                </div>
+
+                <Button 
+                  type="submit" 
+                  variant="default" 
+                  size="default" 
+                  className="w-full text-sm"
+                  disabled={isSubmitting}
+                >
+                  {isSubmitting ? (
+                    "Sending..."
+                  ) : (
+                    <>
+                      Send Message
+                      <Send className="ml-2 h-3 w-3" />
+                    </>
+                  )}
+                </Button>
+              </form>
             </div>
 
-            {/* Availability */}
-            <div className="bg-card border border-card-border rounded-xl p-8 shadow-soft">
-              <h3 className="font-heading font-bold text-xl text-primary mb-4">Availability</h3>
-              <div className="space-y-4">
-                <div className="flex items-center justify-between">
-                  <span className="text-foreground font-body">Response Time</span>
-                  <span className="text-accent-blue font-body font-medium">Within 24 hours</span>
-                </div>
-                <div className="flex items-center justify-between">
-                  <span className="text-foreground font-body">Project Start</span>
-                  <span className="text-accent-blue font-body font-medium">Available now</span>
-                </div>
-                <div className="flex items-center justify-between">
-                  <span className="text-foreground font-body">Time Zone</span>
-                  <span className="text-accent-blue font-body font-medium">IST (UTC +5:30)</span>
+            {/* Contact Information */}
+            <div className="space-y-6">
+              <div className="bg-muted/30 rounded p-6 space-y-4">
+                <h3 className="font-heading font-medium text-primary">Get in Touch</h3>
+                <p className="text-muted-foreground font-body text-sm leading-relaxed">
+                  I'm always excited to discuss new projects and opportunities. Feel free to reach out 
+                  through any of these channels.
+                </p>
+
+                <div className="space-y-3">
+                  {contactMethods.map((method, index) => {
+                    const IconComponent = method.icon;
+                    return (
+                      <a
+                        key={index}
+                        href={method.href}
+                        className="flex items-start gap-3 p-3 bg-background rounded border border-border hover:shadow-minimal transition-shadow"
+                      >
+                        <div className="w-5 h-5 bg-muted rounded flex items-center justify-center flex-shrink-0">
+                          <IconComponent className="w-3 h-3 text-primary" />
+                        </div>
+                        <div className="flex-1 space-y-1">
+                          <h4 className="font-heading font-medium text-primary text-sm">
+                            {method.label}
+                          </h4>
+                          <p className="text-muted-foreground font-body text-xs">
+                            {method.value}
+                          </p>
+                          <p className="text-muted-foreground font-body text-xs">
+                            {method.description}
+                          </p>
+                        </div>
+                      </a>
+                    );
+                  })}
                 </div>
               </div>
-            </div>
 
-            {/* Quick Stats */}
-            <div className="bg-card border border-card-border rounded-xl p-8 shadow-soft">
-              <h3 className="font-heading font-bold text-xl text-primary mb-6">Why Choose Me?</h3>
-              <div className="grid grid-cols-2 gap-4">
-                <div className="text-center">
-                  <div className="font-heading font-bold text-2xl text-accent-blue">100%</div>
-                  <div className="text-muted-foreground font-body text-sm">Quality Guaranteed</div>
+              {/* Availability */}
+              <div className="border border-border rounded p-6 space-y-4">
+                <h3 className="font-heading font-medium text-primary">Availability</h3>
+                <div className="space-y-2">
+                  <div className="flex items-center justify-between">
+                    <span className="text-muted-foreground font-body text-sm">Response Time</span>
+                    <span className="text-primary font-body font-medium text-sm">Within 24 hours</span>
+                  </div>
+                  <div className="flex items-center justify-between">
+                    <span className="text-muted-foreground font-body text-sm">Project Start</span>
+                    <span className="text-primary font-body font-medium text-sm">Available now</span>
+                  </div>
+                  <div className="flex items-center justify-between">
+                    <span className="text-muted-foreground font-body text-sm">Time Zone</span>
+                    <span className="text-primary font-body font-medium text-sm">IST (UTC +5:30)</span>
+                  </div>
                 </div>
-                <div className="text-center">
-                  <div className="font-heading font-bold text-2xl text-accent-blue">24h</div>
-                  <div className="text-muted-foreground font-body text-sm">Quick Response</div>
-                </div>
-                <div className="text-center">
-                  <div className="font-heading font-bold text-2xl text-accent-blue">SEO</div>
-                  <div className="text-muted-foreground font-body text-sm">Optimized Content</div>
-                </div>
-                <div className="text-center">
-                  <div className="font-heading font-bold text-2xl text-accent-blue">∞</div>
-                  <div className="text-muted-foreground font-body text-sm">Revisions</div>
+              </div>
+
+              {/* Quick Stats */}
+              <div className="border border-border rounded p-6 space-y-4">
+                <h3 className="font-heading font-medium text-primary">Why Choose Me?</h3>
+                <div className="grid grid-cols-2 gap-4">
+                  <div className="text-center space-y-1">
+                    <div className="font-heading font-medium text-lg text-primary">100%</div>
+                    <div className="text-muted-foreground font-body text-xs">Quality Guaranteed</div>
+                  </div>
+                  <div className="text-center space-y-1">
+                    <div className="font-heading font-medium text-lg text-primary">24h</div>
+                    <div className="text-muted-foreground font-body text-xs">Quick Response</div>
+                  </div>
+                  <div className="text-center space-y-1">
+                    <div className="font-heading font-medium text-lg text-primary">SEO</div>
+                    <div className="text-muted-foreground font-body text-xs">Optimized Content</div>
+                  </div>
+                  <div className="text-center space-y-1">
+                    <div className="font-heading font-medium text-lg text-primary">∞</div>
+                    <div className="text-muted-foreground font-body text-xs">Revisions</div>
+                  </div>
                 </div>
               </div>
             </div>
