@@ -1,4 +1,4 @@
-import { Calendar, MapPin, TrendingUp, Globe, Target, Zap, Award, BookOpen } from "lucide-react";
+import { TrendingUp, Target, Award, BookOpen } from "lucide-react";
 import { Button } from "./ui/button";
 
 const Portfolio = () => {
@@ -26,7 +26,7 @@ const Portfolio = () => {
 
   const upcomingProjects = [
     "Personal Travel Blog Launch",
-    "Content Strategy Certification",
+    "Content Strategy Certification", 
     "Advanced SEO Course Completion",
     "Client Testimonial Collection",
     "Portfolio Website Expansion"
@@ -40,81 +40,75 @@ const Portfolio = () => {
   };
 
   return (
-    <section id="portfolio" className="py-8 bg-black">
-      <div className="max-w-4xl mx-auto px-6">
+    <section id="portfolio" className="py-16 bg-white">
+      <div className="max-w-5xl mx-auto px-8">
         
-        {/* Minimal Header */}
-        <div className="mb-6">
-          <div className="flex items-center gap-2 mb-1">
-            <div className="w-6 h-6 bg-accent-blue rounded-full flex items-center justify-center">
-              <Globe className="w-3 h-3 text-white" />
-            </div>
-            <span className="text-accent-blue font-body font-medium text-xs uppercase tracking-wider">Portfolio</span>
-          </div>
-          <h2 className="font-heading font-bold text-3xl text-white leading-tight mb-1">
+        {/* Minimalist Header */}
+        <div className="mb-8">
+          <h2 className="font-heading font-light text-6xl text-black mb-1 tracking-tight">
             Work
           </h2>
-          <p className="text-sm text-gray-400 font-body max-w-lg">
+          <p className="text-base text-gray-600 font-body max-w-2xl leading-relaxed">
             Travel content that inspires wanderlust and drives results.
           </p>
         </div>
 
-        {/* Main Project with Minimal Design */}
-        <div className="space-y-4 mb-8">
+        {/* Main Project - Clean Minimal Design */}
+        <div className="mb-12">
           {portfolioHighlights.map((project, index) => (
-            <div key={index} className="space-y-4">
+            <div key={index} className="space-y-6">
               
-              {/* Project Title */}
-              <div className="border-l-2 border-accent-blue pl-4">
-                <h3 className="font-heading font-bold text-xl text-white mb-1">
+              {/* Project Title - Tight Spacing */}
+              <div className="border-l border-gray-300 pl-6">
+                <h3 className="font-heading font-medium text-3xl text-black mb-0">
                   Travel Blog Series
                 </h3>
-                <p className="text-sm text-gray-400 font-body leading-relaxed">
+                <p className="text-gray-600 font-body text-base leading-relaxed mt-1">
                   50+ travel blogs capturing the heart of India, designed to spark wanderlust, showcase hidden gems, and boost SEO performance
                 </p>
               </div>
 
-              {/* Minimal Metrics */}
-              <div className="grid grid-cols-4 gap-3">
-                <div className="text-center group">
-                  <div className="w-8 h-8 bg-accent-blue/20 rounded-full flex items-center justify-center mx-auto mb-1 group-hover:bg-accent-blue/30 transition-colors">
-                    <BookOpen className="w-4 h-4 text-accent-blue" />
+              {/* Clean Metrics Grid */}
+              <div className="grid grid-cols-4 gap-8 py-6">
+                <div className="text-center">
+                  <div className="flex justify-center mb-2">
+                    <BookOpen className="w-5 h-5 text-gray-400" />
                   </div>
-                  <div className="font-heading font-bold text-lg text-white mb-0.5">50+</div>
-                  <div className="text-gray-400 font-body text-xs">Articles</div>
+                  <div className="font-heading font-medium text-2xl text-black mb-0">50+</div>
+                  <div className="text-gray-500 font-body text-sm">Articles</div>
                 </div>
                 
-                <div className="text-center group">
-                  <div className="w-8 h-8 bg-accent-orange/20 rounded-full flex items-center justify-center mx-auto mb-1 group-hover:bg-accent-orange/30 transition-colors">
-                    <TrendingUp className="w-4 h-4 text-accent-orange" />
+                <div className="text-center">
+                  <div className="flex justify-center mb-2">
+                    <TrendingUp className="w-5 h-5 text-gray-400" />
                   </div>
-                  <div className="font-heading font-bold text-lg text-white mb-0.5">1,200</div>
-                  <div className="text-gray-400 font-body text-xs">Avg Words</div>
+                  <div className="font-heading font-medium text-2xl text-black mb-0">1,200</div>
+                  <div className="text-gray-500 font-body text-sm">Avg Words</div>
                 </div>
                 
-                <div className="text-center group">
-                  <div className="w-8 h-8 bg-accent-green/20 rounded-full flex items-center justify-center mx-auto mb-1 group-hover:bg-accent-green/30 transition-colors">
-                    <Award className="w-4 h-4 text-accent-green" />
+                <div className="text-center">
+                  <div className="flex justify-center mb-2">
+                    <Award className="w-5 h-5 text-gray-400" />
                   </div>
-                  <div className="font-heading font-bold text-lg text-white mb-0.5">95%</div>
-                  <div className="text-gray-400 font-body text-xs">SEO Score</div>
+                  <div className="font-heading font-medium text-2xl text-black mb-0">95%</div>
+                  <div className="text-gray-500 font-body text-sm">SEO Score</div>
                 </div>
                 
-                <div className="text-center group">
-                  <div className="w-8 h-8 bg-accent-purple/20 rounded-full flex items-center justify-center mx-auto mb-1 group-hover:bg-accent-purple/30 transition-colors">
-                    <Zap className="w-4 h-4 text-accent-purple" />
+                <div className="text-center">
+                  <div className="flex justify-center mb-2">
+                    <Target className="w-5 h-5 text-gray-400" />
                   </div>
-                  <div className="font-heading font-bold text-lg text-white mb-0.5">High</div>
-                  <div className="text-gray-400 font-body text-xs">Engagement</div>
+                  <div className="font-heading font-medium text-2xl text-black mb-0">High</div>
+                  <div className="text-gray-500 font-body text-sm">Engagement</div>
                 </div>
               </div>
 
               {/* Minimal Highlights */}
-              <div className="space-y-1">
+              <div className="space-y-2 pl-6">
                 {project.highlights.map((highlight, highlightIndex) => (
-                  <div key={highlightIndex} className="flex items-start gap-3">
-                    <div className="w-1 h-1 bg-white rounded-full mt-1.5 flex-shrink-0"></div>
-                    <p className="text-gray-300 font-body text-sm leading-relaxed">{highlight}</p>
+                  <div key={highlightIndex} className="flex items-start gap-4">
+                    <div className="w-1 h-1 bg-gray-400 rounded-full mt-2 flex-shrink-0"></div>
+                    <p className="text-gray-700 font-body text-sm leading-relaxed">{highlight}</p>
                   </div>
                 ))}
               </div>
@@ -122,35 +116,27 @@ const Portfolio = () => {
           ))}
         </div>
 
-        {/* Minimal Two Column Layout */}
-        <div className="grid md:grid-cols-2 gap-6 mb-8">
+        {/* Clean Two Column Layout */}
+        <div className="grid md:grid-cols-2 gap-12 mb-12">
           
           {/* Future Projects */}
-          <div className="space-y-2">
-            <div className="flex items-center gap-2 mb-3">
-              <Target className="w-4 h-4 text-accent-orange" />
-              <h3 className="font-heading font-bold text-lg text-white">Future</h3>
-            </div>
-            
-            <div className="space-y-1">
+          <div>
+            <h3 className="font-heading font-medium text-xl text-black mb-3">Future</h3>
+            <div className="space-y-2">
               {upcomingProjects.map((project, index) => (
                 <div key={index} className="flex items-start gap-3 py-1 hover:translate-x-1 transition-transform duration-200">
-                  <div className="w-0.5 h-0.5 bg-accent-orange rounded-full mt-2 flex-shrink-0"></div>
-                  <span className="text-gray-300 font-body text-sm leading-relaxed">{project}</span>
+                  <div className="w-1 h-1 bg-gray-400 rounded-full mt-2 flex-shrink-0"></div>
+                  <span className="text-gray-600 font-body text-sm leading-relaxed">{project}</span>
                 </div>
               ))}
             </div>
           </div>
 
           {/* Client Feedback */}
-          <div className="space-y-2">
-            <div className="flex items-center gap-2 mb-3">
-              <Zap className="w-4 h-4 text-accent-green" />
-              <h3 className="font-heading font-bold text-lg text-white">Feedback</h3>
-            </div>
-            
-            <div className="py-4 text-center border border-gray-700 rounded-lg">
-              <p className="text-gray-400 font-body text-sm">
+          <div>
+            <h3 className="font-heading font-medium text-xl text-black mb-3">Feedback</h3>
+            <div className="py-6 text-center border border-gray-200">
+              <p className="text-gray-500 font-body text-sm">
                 Testimonials coming soon
               </p>
             </div>
@@ -158,13 +144,13 @@ const Portfolio = () => {
         </div>
 
         {/* Minimal CTA */}
-        <div className="text-center border-t border-gray-700 pt-6">
-          <h3 className="font-heading font-bold text-xl text-white mb-2">Ready to collaborate?</h3>
+        <div className="text-center border-t border-gray-200 pt-8">
+          <h3 className="font-heading font-medium text-2xl text-black mb-3">Ready to collaborate?</h3>
           <Button 
             variant="default" 
             size="sm" 
             onClick={scrollToContact}
-            className="bg-white hover:bg-gray-200 text-black px-6 py-2 rounded-full text-sm"
+            className="bg-black hover:bg-gray-800 text-white px-8 py-3 text-sm font-medium"
           >
             Start Project
           </Button>
