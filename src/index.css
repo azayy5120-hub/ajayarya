@@ -2,62 +2,64 @@
 @tailwind components;
 @tailwind utilities;
 
-/* Ajay Arya Portfolio Design System - Ultra Minimalist & Modern */
+/* Ajay Arya Portfolio - Original Dark Minimalist Design */
 
 @layer base {
   :root {
-    /* Pure Minimalist Colors */
-    --background: 0 0% 100%;
-    --foreground: 0 0% 3%;
+    /* Dark Original Colors */
+    --background: 223 39% 7%;
+    --foreground: 0 0% 98%;
     
-    /* Ultra Clean Typography */
-    --primary: 0 0% 3%;
-    --primary-foreground: 0 0% 100%;
-    --primary-hover: 0 0% 10%;
+    /* Creative Typography */
+    --primary: 0 0% 98%;
+    --primary-foreground: 223 39% 7%;
+    --primary-hover: 0 0% 90%;
     
-    /* Sophisticated Accent */
-    --accent: 0 0% 3%;
-    --accent-foreground: 0 0% 100%;
-    --accent-soft: 0 0% 98%;
+    /* Unique Accent */
+    --accent: 263 70% 70%;
+    --accent-foreground: 0 0% 98%;
+    --accent-soft: 223 39% 12%;
     
-    /* Refined Grays */
-    --muted: 0 0% 98%;
-    --muted-foreground: 0 0% 40%;
-    --border: 0 0% 95%;
+    /* Original Grays */
+    --muted: 223 39% 12%;
+    --muted-foreground: 0 0% 65%;
+    --border: 223 39% 15%;
     
-    /* Pure Content Areas */
-    --card: 0 0% 100%;
-    --card-foreground: 0 0% 3%;
-    --card-border: 0 0% 95%;
+    /* Dark Content Areas */
+    --card: 223 39% 9%;
+    --card-foreground: 0 0% 98%;
+    --card-border: 223 39% 15%;
     
-    /* Minimal Interactive Elements */
-    --secondary: 0 0% 98%;
-    --secondary-foreground: 0 0% 3%;
-    --secondary-hover: 0 0% 95%;
+    /* Dark Interactive Elements */
+    --secondary: 223 39% 12%;
+    --secondary-foreground: 0 0% 98%;
+    --secondary-hover: 223 39% 18%;
     
-    /* Clean Form Elements */
-    --input: 0 0% 100%;
-    --ring: 0 0% 3%;
+    /* Dark Form Elements */
+    --input: 223 39% 12%;
+    --ring: 263 70% 70%;
     
     /* Status Colors */
     --destructive: 0 84% 60%;
-    --destructive-foreground: 0 0% 100%;
+    --destructive-foreground: 0 0% 98%;
     
     /* Layout */
-    --radius: 0.25rem;
+    --radius: 0.125rem;
     
-    /* Modern Typography Scale */
+    /* Original Typography */
     --font-heading: 'Inter', -apple-system, BlinkMacSystemFont, system-ui, sans-serif;
     --font-body: 'Inter', -apple-system, BlinkMacSystemFont, system-ui, sans-serif;
+    --font-display: 'Inter', -apple-system, BlinkMacSystemFont, system-ui, sans-serif;
     
-    /* Subtle Shadows */
-    --shadow-minimal: 0 1px 2px hsl(0 0% 3% / 0.03);
-    --shadow-soft: 0 2px 8px hsl(0 0% 3% / 0.06);
-    --shadow-medium: 0 4px 16px hsl(0 0% 3% / 0.08);
+    /* Creative Shadows */
+    --shadow-minimal: 0 1px 3px hsl(223 39% 3% / 0.4);
+    --shadow-soft: 0 4px 12px hsl(223 39% 3% / 0.3);
+    --shadow-medium: 0 8px 24px hsl(223 39% 3% / 0.25);
+    --shadow-glow: 0 0 40px hsl(263 70% 70% / 0.15);
     
-    /* Clean Backgrounds */
-    --hero-gradient: linear-gradient(180deg, hsl(0 0% 100%) 0%, hsl(0 0% 99%) 100%);
-    --section-gradient: linear-gradient(180deg, hsl(0 0% 100%) 0%, hsl(0 0% 100%) 100%);
+    /* Original Backgrounds */
+    --hero-gradient: linear-gradient(135deg, hsl(223 39% 7%) 0%, hsl(263 70% 15%) 100%);
+    --section-gradient: linear-gradient(180deg, hsl(223 39% 7%) 0%, hsl(223 39% 8%) 100%);
 
     --sidebar-background: 0 0% 98%;
 
