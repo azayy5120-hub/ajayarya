@@ -1,4 +1,4 @@
-import { TrendingUp, Target, Award, BookOpen } from "lucide-react";
+import { ExternalLink, Calendar, MapPin, Users, TrendingUp } from "lucide-react";
 import { Button } from "./ui/button";
 
 const Portfolio = () => {
@@ -6,12 +6,12 @@ const Portfolio = () => {
     {
       title: "Travel Blog Series at WabbitHire",
       description: "A comprehensive collection of 50+ travel blogs covering destinations worldwide, optimized for SEO and designed to inspire wanderlust.",
-      metrics: {
-        articles: "50+",
-        wordCount: "1,200",
-        seoScore: "95%",
-        engagement: "High"
-      },
+      metrics: [
+        { label: "Articles Published", value: "50+" },
+        { label: "Average Word Count", value: "1,200" },
+        { label: "SEO Score", value: "95%" },
+        { label: "Engagement Rate", value: "High" }
+      ],
       highlights: [
         "Destination Guides Across the Country",
         "Cultural sensitivity and accuracy maintained",
@@ -19,16 +19,17 @@ const Portfolio = () => {
         "Consistent brand voice across all content",
         "Collaborated with editorial team for quality"
       ],
-      duration: "3 Months",
+      period: "3 Months",
       type: "Travel Content Specialization"
     }
   ];
 
   const upcomingProjects = [
-    { title: "Personal Travel Blog", description: "Launching my own travel content platform" },
-    { title: "Content Strategy Certification", description: "Advanced content marketing credentials" },
-    { title: "SEO Mastery Course", description: "Deep dive into technical SEO optimization" },
-    { title: "Portfolio Expansion", description: "Adding video and interactive content" }
+    "Personal Travel Blog Launch",
+    "Content Strategy Certification",
+    "Advanced SEO Course Completion",
+    "Client Testimonial Collection",
+    "Portfolio Website Expansion"
   ];
 
   const scrollToContact = () => {
@@ -39,150 +40,151 @@ const Portfolio = () => {
   };
 
   return (
-    <section id="portfolio" className="py-32 bg-gradient-to-b from-background to-accent/5">
-      <div className="max-w-7xl mx-auto px-8 lg:px-12">
-        {/* Header */}
-        <div className="grid lg:grid-cols-12 gap-20 mb-32">
-          <div className="lg:col-span-2">
-            <div className="space-y-8 sticky top-32">
-              <span className="text-xs text-muted-foreground/40 tracking-[0.4em] font-light">02</span>
-              <div className="transform -rotate-90 origin-left">
-                <h2 className="text-lg text-foreground tracking-[0.3em] font-light whitespace-nowrap">
-                  WORK
-                </h2>
-              </div>
-            </div>
-          </div>
-          
-          <div className="lg:col-span-10">
-            <h3 className="text-5xl lg:text-6xl font-extralight text-foreground leading-tight mb-8">
-              Selected <span className="text-accent italic">projects</span>
-            </h3>
-            <p className="text-xl text-muted-foreground leading-relaxed max-w-3xl font-light">
-              A curated showcase of content that demonstrates strategic thinking, 
-              creative execution, and measurable impact across diverse industries.
-            </p>
-          </div>
+    <section id="portfolio" className="py-20 bg-section-gradient">
+      <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="text-center mb-16">
+          <p className="text-accent-blue font-body font-medium tracking-wide uppercase text-sm mb-4">
+            Portfolio
+          </p>
+          <h2 className="font-heading font-bold text-4xl lg:text-5xl text-primary leading-tight mb-6">
+            My <span className="text-accent-blue">Work</span> Speaks
+          </h2>
+          <p className="text-lg text-muted-foreground font-body leading-relaxed max-w-3xl mx-auto">
+            Every project is a testament to my commitment to quality, creativity, and results. 
+            Here's a showcase of my professional journey and achievements.
+          </p>
         </div>
 
-        {/* Featured Project */}
-        <div className="space-y-24">
+        {/* Main Portfolio Project */}
+        <div className="mb-16">
           {portfolioHighlights.map((project, index) => (
-            <div key={index} className="group">
-              <div className="grid lg:grid-cols-12 gap-16 items-start">
-                {/* Project meta */}
-                <div className="lg:col-span-3 space-y-8">
-                  <div className="space-y-4">
-                    <span className="text-8xl font-extralight text-muted-foreground/10">
-                      {String(index + 1).padStart(2, '0')}
-                    </span>
-                    <div className="space-y-2">
-                      <h4 className="text-2xl font-light text-foreground leading-tight">{project.title}</h4>
-                      <p className="text-sm text-muted-foreground tracking-[0.1em] uppercase">{project.type}</p>
+            <div key={index} className="bg-card border border-card-border rounded-xl p-8 shadow-medium">
+              {/* Project Header */}
+              <div className="flex flex-col lg:flex-row lg:items-center gap-6 mb-8">
+                <div className="flex-1">
+                  <h3 className="font-heading font-bold text-2xl lg:text-3xl text-primary mb-3">
+                    {project.title}
+                  </h3>
+                  <p className="text-lg text-muted-foreground font-body leading-relaxed mb-4">
+                    50+ travel blogs capturing the heart of India, designed to spark wanderlust, showcase hidden gems, and boost SEO performance
+                  </p>
+                  <div className="flex flex-wrap gap-4 text-sm text-muted-foreground font-body">
+                    <div className="flex items-center gap-2">
+                      <Calendar className="w-4 h-4" />
+                      <span>{project.period}</span>
                     </div>
-                  </div>
-                  
-                  <div className="space-y-2">
-                    <span className="text-xs text-muted-foreground/40 tracking-[0.3em] uppercase">Duration</span>
-                    <p className="text-sm text-muted-foreground">{project.duration}</p>
+                    <div className="flex items-center gap-2">
+                      <MapPin className="w-4 h-4" />
+                      <span>Remote</span>
+                    </div>
+                    <div className="flex items-center gap-2">
+                      <TrendingUp className="w-4 h-4" />
+                      <span>{project.type}</span>
+                    </div>
                   </div>
                 </div>
+              </div>
 
-                {/* Project content */}
-                <div className="lg:col-span-9 space-y-12">
-                  {/* Description */}
-                  <div className="space-y-6">
-                    <p className="text-xl text-muted-foreground leading-relaxed font-light max-w-3xl">
-                      {project.description}
-                    </p>
-                    
-                    {/* Accent line */}
-                    <div className="w-24 h-[1px] bg-gradient-to-r from-accent to-transparent"></div>
-                  </div>
-
-                  {/* Metrics grid */}
-                  <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
-                    {Object.entries(project.metrics).map(([key, value]) => (
-                      <div key={key} className="space-y-3">
-                        <div className="text-3xl font-extralight text-foreground">{value}</div>
-                        <div className="text-xs text-muted-foreground capitalize tracking-[0.2em] uppercase">
-                          {key.replace(/([A-Z])/g, ' $1').trim()}
-                        </div>
-                      </div>
-                    ))}
-                  </div>
-
-                  {/* Highlights */}
-                  <div className="space-y-6">
-                    <h5 className="text-lg font-light text-foreground">Key Achievements</h5>
-                    <div className="grid md:grid-cols-2 gap-6">
-                      {project.highlights.map((highlight, i) => (
-                        <div key={i} className="flex items-start gap-4 group/item">
-                          <div className="w-2 h-2 bg-accent/60 rounded-full mt-2 group-hover/item:bg-accent transition-colors"></div>
-                          <p className="text-sm text-muted-foreground font-light leading-relaxed group-hover/item:text-foreground transition-colors">
-                            {highlight}
-                          </p>
-                        </div>
-                      ))}
+              {/* Metrics */}
+              <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6 mb-8">
+                {project.metrics.map((metric, metricIndex) => (
+                  <div key={metricIndex} className="text-center bg-accent-gray/30 rounded-lg p-4">
+                    <div className="font-heading font-bold text-2xl text-accent-blue mb-1">
+                      {metric.value}
+                    </div>
+                    <div className="text-muted-foreground font-body text-sm">
+                      {metric.label}
                     </div>
                   </div>
+                ))}
+              </div>
+
+              {/* Project Highlights */}
+              <div className="space-y-6">
+                <h4 className="font-heading font-semibold text-xl text-primary">Project Highlights</h4>
+                <div className="grid md:grid-cols-2 gap-4">
+                  {project.highlights.map((highlight, highlightIndex) => (
+                    <div key={highlightIndex} className="flex items-start gap-3">
+                      <div className="w-2 h-2 bg-accent-blue rounded-full flex-shrink-0 mt-2"></div>
+                      <p className="text-foreground font-body">{highlight}</p>
+                    </div>
+                  ))}
                 </div>
               </div>
             </div>
           ))}
         </div>
 
-        {/* Future section */}
-        <div className="mt-40 pt-24 border-t border-border/10">
-          <div className="grid lg:grid-cols-2 gap-20">
-            <div className="space-y-12">
-              <h3 className="text-4xl font-extralight text-foreground">What's Next</h3>
-              <div className="space-y-8">
-                {upcomingProjects.map((project, index) => (
-                  <div key={index} className="space-y-3 group/project">
-                    <div className="flex items-center gap-4">
-                      <span className="text-xs text-muted-foreground/30">
-                        {String(index + 1).padStart(2, '0')}
-                      </span>
-                      <h4 className="text-lg font-light text-foreground group-hover/project:text-accent transition-colors">
-                        {project.title}
-                      </h4>
-                    </div>
-                    <p className="text-sm text-muted-foreground font-light leading-relaxed ml-8">
-                      {project.description}
-                    </p>
-                  </div>
-                ))}
+        {/* Future Projects Section */}
+        <div className="grid lg:grid-cols-2 gap-8">
+          {/* Upcoming Projects */}
+          <div className="bg-card border border-card-border rounded-xl p-8 shadow-soft">
+            <div className="flex items-center gap-4 mb-6">
+              <div className="w-12 h-12 bg-accent-blue-soft rounded-lg flex items-center justify-center">
+                <Users className="w-6 h-6 text-accent-blue" />
+              </div>
+              <div>
+                <h3 className="font-heading font-bold text-xl text-primary">Future Projects</h3>
+                <p className="text-muted-foreground font-body text-sm">Expanding my portfolio</p>
               </div>
             </div>
             
-            <div className="space-y-12">
-              <h3 className="text-4xl font-extralight text-foreground">Let's Create Together</h3>
-              <div className="space-y-8">
-                <p className="text-lg text-muted-foreground font-light leading-relaxed max-w-lg">
-                  Ready to transform your ideas into compelling content that resonates 
-                  with your audience and drives meaningful results?
-                </p>
-                
-                <div className="space-y-6">
-                  <button 
-                    onClick={scrollToContact}
-                    className="group text-foreground hover:text-accent transition-colors duration-300 text-lg font-light"
-                  >
-                    <span className="border-b border-transparent group-hover:border-accent pb-1">
-                      Start a Project
-                    </span>
-                  </button>
-                  
-                  <div className="text-sm text-muted-foreground/60 space-y-2">
-                    <p>→ Content Strategy & Planning</p>
-                    <p>→ Creative Writing & Storytelling</p>
-                    <p>→ SEO Optimization & Analytics</p>
-                  </div>
+            <div className="space-y-3">
+              {upcomingProjects.map((project, index) => (
+                <div key={index} className="flex items-center gap-3 p-3 bg-accent-gray/20 rounded-lg">
+                  <div className="w-2 h-2 bg-accent-blue rounded-full flex-shrink-0"></div>
+                  <span className="text-foreground font-body">{project}</span>
                 </div>
+              ))}
+            </div>
+          </div>
+
+          {/* Testimonials Placeholder */}
+          <div className="bg-card border border-card-border rounded-xl p-8 shadow-soft">
+            <div className="flex items-center gap-4 mb-6">
+              <div className="w-12 h-12 bg-accent-blue-soft rounded-lg flex items-center justify-center">
+                <ExternalLink className="w-6 h-6 text-accent-blue" />
+              </div>
+              <div>
+                <h3 className="font-heading font-bold text-xl text-primary">Client Feedback</h3>
+                <p className="text-muted-foreground font-body text-sm">What clients say about my work</p>
+              </div>
+            </div>
+            
+            <div className="space-y-6">
+              <div className="bg-accent-gray/20 rounded-lg p-6">
+                <p className="text-foreground font-body italic leading-relaxed mb-4">
+                  "Ajay consistently delivered high-quality travel content that perfectly captured our brand voice. 
+                  His SEO expertise helped improve our content visibility significantly."
+                </p>
+                <div>
+                  <p className="font-heading font-semibold text-primary">Editorial Team</p>
+                  <p className="text-muted-foreground font-body text-sm">WabbitHire</p>
+                </div>
+              </div>
+
+              <div className="text-center">
+                <p className="text-muted-foreground font-body text-sm mb-4">
+                  More testimonials coming soon as I continue to work with amazing clients
+                </p>
+                <Button variant="outline" onClick={scrollToContact}>
+                  Work With Me
+                  <ExternalLink className="ml-2 h-4 w-4" />
+                </Button>
               </div>
             </div>
           </div>
+        </div>
+
+        {/* CTA Section */}
+        <div className="mt-16 text-center bg-card border border-card-border rounded-xl p-8 shadow-soft">
+          <h3 className="font-heading font-bold text-2xl text-primary mb-4">Ready to Create Something Amazing?</h3>
+          <p className="text-lg text-muted-foreground font-body mb-6 max-w-2xl mx-auto">
+            Let's collaborate on your next content project and create something that truly resonates with your audience.
+          </p>
+          <Button variant="cta" size="lg" onClick={scrollToContact}>
+            Start Your Project
+          </Button>
         </div>
       </div>
     </section>
