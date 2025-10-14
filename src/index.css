@@ -2,69 +2,92 @@
 @tailwind components;
 @tailwind utilities;
 
-/* ELEGANTE FOOTWEAR - Premium E-commerce Design System */
+/* Modern Dashboard Design System - Dark Mode */
 
 @layer base {
   :root {
-    /* Brand Colors - Professional Palette */
-    --background: 40 33% 98%;           /* Ivory White #FAFAF8 */
-    --foreground: 0 0% 20%;             /* Charcoal #333333 */
+    /* Core Colors - Dark Theme */
+    --background: 223 47% 5%;
+    --foreground: 210 40% 98%;
     
-    /* Primary - Navy Blue */
-    --primary: 216 46% 20%;             /* Navy Blue #1B2B4D */
-    --primary-foreground: 40 33% 98%;
-    --primary-hover: 216 46% 25%;
+    /* Primary Brand Colors */
+    --primary: 224 100% 58%;
+    --primary-foreground: 223 47% 5%;
+    --primary-hover: 224 100% 65%;
+    --primary-glow: 224 100% 70%;
     
-    /* Secondary - Warm Gold */
-    --secondary: 42 39% 59%;            /* Warm Gold #C9A961 */
-    --secondary-foreground: 216 46% 20%;
-    --secondary-hover: 42 39% 65%;
+    /* Dashboard Accent Colors */
+    --accent-blue: 224 100% 58%;
+    --accent-blue-soft: 224 100% 8%;
+    --accent-blue-glow: 224 100% 70%;
+    --accent-gray: 217 19% 15%;
+    --accent-gray-dark: 217 19% 12%;
     
-    /* Accent - Sage Green */
-    --accent: 88 14% 55%;               /* Sage Green #8B9C7F */
-    --accent-foreground: 40 33% 98%;
-    
-    /* Neutral - Warm Gray */
-    --neutral: 30 19% 90%;              /* Warm Gray #E8E4DF */
-    --neutral-foreground: 0 0% 20%;
+    /* Card & Content Areas */
+    --card: 217 19% 8%;
+    --card-foreground: 210 40% 98%;
+    --card-border: 217 19% 12%;
+    --card-hover: 217 19% 10%;
     
     /* Interactive Elements */
-    --muted: 30 19% 90%;
-    --muted-foreground: 0 0% 45%;
+    --secondary: 217 19% 12%;
+    --secondary-foreground: 210 40% 98%;
+    --secondary-hover: 217 19% 15%;
     
-    /* Card Styles */
-    --card: 0 0% 100%;
-    --card-foreground: 0 0% 20%;
-    --card-border: 30 19% 85%;
+    --muted: 217 19% 15%;
+    --muted-foreground: 215 20% 65%;
     
-    /* Form Elements */
-    --border: 30 19% 85%;
-    --input: 30 19% 85%;
-    --ring: 216 46% 20%;
+    --accent: 224 100% 58%;
+    --accent-foreground: 223 47% 5%;
     
     /* Status Colors */
-    --destructive: 0 65% 51%;
-    --destructive-foreground: 0 0% 100%;
+    --destructive: 0 63% 31%;
+    --destructive-foreground: 210 40% 98%;
     
-    /* Popover */
-    --popover: 0 0% 100%;
-    --popover-foreground: 0 0% 20%;
+    /* Form Elements */
+    --border: 217 19% 12%;
+    --input: 217 19% 12%;
+    --ring: 224 100% 58%;
     
     /* Layout */
-    --radius: 0.5rem;
+    --radius: 0.75rem;
     
-    /* Typography */
-    --font-heading: 'Playfair Display', serif;
-    --font-body: 'Inter', sans-serif;
+    /* Typography Scale */
+    --font-heading: 'Inter', system-ui, sans-serif;
+    --font-body: 'Inter', system-ui, sans-serif;
     
-    /* Shadows - Professional & Subtle */
-    --shadow-soft: 0 2px 8px rgba(27, 43, 77, 0.08);
-    --shadow-medium: 0 4px 16px rgba(27, 43, 77, 0.12);
-    --shadow-large: 0 8px 32px rgba(27, 43, 77, 0.16);
-    --shadow-hover: 0 6px 24px rgba(27, 43, 77, 0.14);
+    /* Spacing & Shadows */
+    --shadow-soft: 0 4px 12px -2px hsl(223 47% 2% / 0.4);
+    --shadow-medium: 0 8px 24px -4px hsl(223 47% 2% / 0.5);
+    --shadow-large: 0 16px 48px -8px hsl(223 47% 2% / 0.6);
+    --shadow-glow: 0 0 20px hsl(224 100% 58% / 0.3);
     
-    /* Transitions */
-    --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    /* Dashboard Specific */
+    --hero-gradient: linear-gradient(135deg, hsl(223 47% 5%) 0%, hsl(217 19% 8%) 100%);
+    --section-gradient: linear-gradient(180deg, hsl(223 47% 5%) 0%, hsl(217 19% 6%) 100%);
+    --chart-gradient: linear-gradient(180deg, hsl(224 100% 58% / 0.8) 0%, hsl(224 100% 58% / 0.1) 100%);
+
+    --sidebar-background: 0 0% 98%;
+
+    --sidebar-foreground: 240 5.3% 26.1%;
+
+    --sidebar-primary: 240 5.9% 10%;
+
+    --sidebar-primary-foreground: 0 0% 98%;
+
+    --sidebar-accent: 240 4.8% 95.9%;
+
+    --sidebar-accent-foreground: 240 5.9% 10%;
+
+    --sidebar-border: 220 13% 91%;
+
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+
+  .light {
+    /* Light mode fallback */
+    --background: 0 0% 100%;
+    --foreground: 223 47% 11%;
   }
 }
 
@@ -76,84 +99,27 @@
   body {
     @apply bg-background text-foreground antialiased;
     font-family: var(--font-body);
-    font-size: 16px;
-    line-height: 1.6;
   }
 
   h1, h2, h3, h4, h5, h6 {
     font-family: var(--font-heading);
-    font-weight: 600;
-    line-height: 1.2;
-  }
-
-  h1 {
-    @apply text-4xl md:text-5xl lg:text-6xl;
-  }
-
-  h2 {
-    @apply text-3xl md:text-4xl lg:text-5xl;
-  }
-
-  h3 {
-    @apply text-2xl md:text-3xl;
-  }
-
-  h4 {
-    @apply text-xl md:text-2xl;
   }
 }
 
 @layer components {
-  /* Professional Card Styles */
-  .elegant-card {
-    @apply bg-card border border-card-border rounded-lg shadow-soft hover:shadow-hover transition-all duration-300;
+  .dashboard-card {
+    @apply bg-card border border-card-border rounded-xl p-6 shadow-soft hover:shadow-medium transition-all duration-300;
   }
 
-  /* Product Card */
-  .product-card {
-    @apply elegant-card overflow-hidden cursor-pointer;
+  .dashboard-metric {
+    @apply bg-accent-gray/50 rounded-lg p-4 border border-accent-gray;
   }
 
-  .product-card:hover {
-    @apply -translate-y-1;
+  .glow-effect {
+    @apply shadow-glow;
   }
 
-  /* Professional Button Styles */
-  .btn-primary {
-    @apply bg-primary text-primary-foreground hover:bg-primary-hover shadow-soft hover:shadow-medium transition-all duration-300 uppercase tracking-wider text-sm font-medium;
-  }
-
-  .btn-secondary {
-    @apply bg-secondary text-secondary-foreground hover:bg-secondary-hover shadow-soft hover:shadow-medium transition-all duration-300 uppercase tracking-wider text-sm font-medium;
-  }
-
-  /* Section Spacing */
-  .section-padding {
-    @apply py-16 md:py-24 lg:py-32;
-  }
-
-  .container-custom {
-    @apply container mx-auto px-4 md:px-6 lg:px-8 max-w-7xl;
-  }
-
-  /* Professional Animations */
-  .fade-in {
-    animation: fadeIn 0.6s ease-in;
-  }
-
-  @keyframes fadeIn {
-    from {
-      opacity: 0;
-      transform: translateY(20px);
-    }
-    to {
-      opacity: 1;
-      transform: translateY(0);
-    }
-  }
-
-  /* Trust Badge Styles */
-  .trust-badge {
-    @apply flex items-center gap-2 text-sm text-muted-foreground;
+  .chart-container {
+    @apply bg-gradient-to-b from-accent-blue/20 to-accent-blue/5 rounded-lg p-4;
   }
 }
