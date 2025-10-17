@@ -17,22 +17,22 @@ const Navigation = () => {
     { id: "home", label: "Home" },
     { id: "services", label: "Services" },
     { id: "portfolio", label: "Portfolio" },
-    { id: "experience", label: "Testimonial" },
+    { id: "experience", label: "Resume" },
   ];
 
   return (
-    <nav className="fixed top-0 left-0 right-0 bg-background/95 backdrop-blur-sm z-50">
+    <nav className="fixed top-0 left-0 right-0 bg-background/95 backdrop-blur-sm z-50 border-b border-card-border">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-20">
           {/* Logo */}
           <button 
             onClick={() => scrollToSection("home")}
-            className="flex items-center gap-2 font-heading font-bold text-xl"
+            className="flex items-center gap-3 font-heading font-bold text-xl group"
           >
-            <div className="w-10 h-10 bg-primary rounded flex items-center justify-center text-background font-bold">
-              5D
+            <div className="w-10 h-10 bg-primary rounded flex items-center justify-center text-primary-foreground font-bold group-hover:scale-110 transition-transform">
+              ✦
             </div>
-            <span className="text-primary">Desifolio</span>
+            <span className="text-foreground">AJAY</span>
           </button>
 
           {/* Desktop Navigation */}
@@ -47,12 +47,6 @@ const Navigation = () => {
                 <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-primary transition-all duration-300 group-hover:w-full"></span>
               </button>
             ))}
-            <Button 
-              onClick={() => scrollToSection("contact")}
-              className="bg-transparent border border-primary text-primary hover:bg-primary hover:text-background transition-all duration-300 rounded-md px-6"
-            >
-              ♥ Let's Talk
-            </Button>
           </div>
 
           {/* Mobile Menu Button */}
@@ -66,7 +60,7 @@ const Navigation = () => {
 
         {/* Mobile Navigation */}
         {isMenuOpen && (
-          <div className="md:hidden py-4 space-y-2">
+          <div className="md:hidden py-4 space-y-2 border-t border-card-border">
             {navItems.map((item) => (
               <button
                 key={item.id}

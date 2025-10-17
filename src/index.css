@@ -6,58 +6,63 @@
 
 @layer base {
   :root {
-    /* Modern Dark Theme */
-    --background: 0 0% 7%;
+    /* Dark Theme with Cyan/Lime Accents */
+    --background: 220 15% 8%;
     --foreground: 0 0% 98%;
     
-    /* Coral Red Primary */
-    --primary: 6 78% 57%;
-    --primary-foreground: 0 0% 100%;
-    --primary-hover: 6 78% 65%;
-    --primary-glow: 6 78% 57%;
+    /* Lime Green Primary (Neon Yellow-Green) */
+    --primary: 75 100% 60%;
+    --primary-foreground: 220 15% 8%;
+    --primary-hover: 75 100% 70%;
+    --primary-glow: 75 100% 60%;
+    
+    /* Cyan Accent */
+    --accent-cyan: 180 100% 45%;
+    --accent-cyan-soft: 180 100% 8%;
     
     /* Card & Content */
-    --card: 0 0% 10%;
+    --card: 220 15% 12%;
     --card-foreground: 0 0% 98%;
-    --card-border: 0 0% 20%;
-    --card-hover: 0 0% 12%;
+    --card-border: 220 15% 20%;
+    --card-hover: 220 15% 14%;
     
     /* Interactive Elements */
-    --secondary: 0 0% 15%;
+    --secondary: 220 15% 15%;
     --secondary-foreground: 0 0% 98%;
-    --secondary-hover: 0 0% 20%;
+    --secondary-hover: 220 15% 20%;
     
-    --muted: 0 0% 20%;
+    --muted: 220 15% 20%;
     --muted-foreground: 0 0% 65%;
     
-    --accent: 6 78% 57%;
-    --accent-foreground: 0 0% 100%;
+    --accent: 75 100% 60%;
+    --accent-foreground: 220 15% 8%;
     
     /* Status Colors */
     --destructive: 0 63% 31%;
     --destructive-foreground: 0 0% 98%;
     
     /* Form Elements */
-    --border: 0 0% 20%;
-    --input: 0 0% 15%;
-    --ring: 6 78% 57%;
+    --border: 220 15% 20%;
+    --input: 220 15% 15%;
+    --ring: 75 100% 60%;
     
     /* Layout */
-    --radius: 0.75rem;
+    --radius: 0.5rem;
     
     /* Typography */
     --font-heading: 'Inter', system-ui, sans-serif;
     --font-body: 'Inter', system-ui, sans-serif;
+    --font-italic: 'Georgia', serif;
     
     /* Shadows */
     --shadow-soft: 0 4px 12px -2px hsl(0 0% 0% / 0.5);
     --shadow-medium: 0 8px 24px -4px hsl(0 0% 0% / 0.6);
     --shadow-large: 0 16px 48px -8px hsl(0 0% 0% / 0.7);
-    --shadow-glow: 0 0 30px hsl(6 78% 57% / 0.4);
+    --shadow-glow: 0 0 30px hsl(75 100% 60% / 0.5);
     
     /* Gradients */
-    --hero-gradient: linear-gradient(135deg, hsl(0 0% 7%) 0%, hsl(0 0% 10%) 100%);
-    --section-gradient: linear-gradient(180deg, hsl(0 0% 7%) 0%, hsl(0 0% 9%) 100%);
+    --hero-gradient: linear-gradient(135deg, hsl(220 15% 8%) 0%, hsl(220 15% 10%) 100%);
+    --section-gradient: linear-gradient(180deg, hsl(220 15% 8%) 0%, hsl(220 15% 9%) 100%);
     
     --sidebar-background: 0 0% 98%;
     --sidebar-foreground: 240 5.3% 26.1%;
@@ -105,6 +110,10 @@
   }
 
   .service-card {
-    @apply bg-transparent border border-border rounded-2xl p-6 hover:border-primary/50 transition-all duration-300 group;
+    @apply bg-transparent border border-border rounded-2xl p-6 hover:border-primary/50 transition-all duration-300;
+  }
+
+  .skill-bar {
+    @apply h-2 bg-primary rounded-full transition-all duration-500;
   }
 }
