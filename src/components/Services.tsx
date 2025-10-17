@@ -62,44 +62,101 @@ const Services = () => {
 
   return (
     <section id="services" className="py-20 bg-background">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
-          <h2 className="font-heading font-bold text-5xl lg:text-6xl text-foreground leading-tight mb-6">
-            My <span className="text-primary">Services</span>
+          <p className="text-accent-blue font-body font-medium tracking-wide uppercase text-sm mb-4">
+            Services
+          </p>
+          <h2 className="font-heading font-bold text-4xl lg:text-5xl text-primary leading-tight mb-6">
+            How I Can <span className="text-accent-blue">Help</span>
           </h2>
-          <p className="text-lg text-muted-foreground font-body leading-relaxed max-w-3xl mx-auto">
-            I'm a content writing partner. Let's transform your vision into
-            <br />ideas that resonate. Whether it's a fully web or a revamp, 
+          <p className="text-lg text-muted-foreground font-body leading-relaxed max-w-2xl mx-auto">
+            Quality content that connects with your audience and drives results.
           </p>
         </div>
 
-        <div className="grid lg:grid-cols-2 gap-8">
+        <div className="grid lg:grid-cols-2 gap-6 mb-16">
           {services.map((service, index) => {
             const IconComponent = service.icon;
             return (
               <div 
                 key={index}
-                className="service-card hover:bg-card/30"
+                className="bg-card border border-card-border rounded-xl p-6 shadow-soft hover:shadow-medium transition-all duration-300 group"
               >
-                <div className="flex items-start gap-6">
-                  <div className="w-14 h-14 flex items-center justify-center flex-shrink-0">
-                    <IconComponent className="w-8 h-8 text-foreground group-hover:text-primary transition-colors" />
+                {/* Header */}
+                <div className="flex items-start gap-4 mb-4">
+                  <div className="w-12 h-12 bg-accent-blue-soft rounded-lg flex items-center justify-center flex-shrink-0 group-hover:scale-110 transition-transform duration-300">
+                    <IconComponent className="w-6 h-6 text-accent-blue" />
                   </div>
                   <div className="flex-1">
-                    <h3 className="font-heading font-bold text-2xl text-foreground mb-3 group-hover:text-primary transition-colors">
-                      {service.title}
-                    </h3>
-                    <p className="text-muted-foreground font-body leading-relaxed mb-4">
+                    <div className="flex items-center gap-2 mb-1">
+                      <span className="font-heading font-bold text-accent-blue">{service.id}</span>
+                      <h3 className="font-heading font-bold text-lg text-primary">{service.title}</h3>
+                    </div>
+                    <p className="text-muted-foreground font-body text-sm leading-relaxed">
                       {service.description}
                     </p>
-                    <div className="flex items-center gap-2 text-primary font-medium text-sm group-hover:gap-4 transition-all">
-                      <ArrowRight className="w-5 h-5" />
-                    </div>
                   </div>
                 </div>
+
+                {/* Features */}
+                <div className="space-y-2">
+                  <div className="grid sm:grid-cols-2 gap-1">
+                    {service.features.map((feature, featureIndex) => (
+                      <div key={featureIndex} className="flex items-center gap-2">
+                        <div className="w-1 h-1 bg-accent-blue rounded-full flex-shrink-0"></div>
+                        <span className="text-foreground font-body text-xs">{feature}</span>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+
               </div>
             );
           })}
+        </div>
+
+        {/* Process Section */}
+        <div className="bg-section-gradient rounded-xl p-8 shadow-soft">
+          <div className="text-center mb-12">
+            <h3 className="font-heading font-bold text-3xl text-primary mb-4">My Writing Process</h3>
+            <p className="text-muted-foreground font-body">
+              A systematic approach that ensures quality, consistency, and results
+            </p>
+          </div>
+
+          <div className="grid md:grid-cols-4 gap-8">
+            {[
+              {
+                step: "01",
+                title: "Consultation",
+                description: "Understanding your goals, audience, and brand voice"
+              },
+              {
+                step: "02", 
+                title: "Research",
+                description: "Deep dive into your industry, competitors, and trends"
+              },
+              {
+                step: "03",
+                title: "Creation",
+                description: "Crafting engaging content optimized for your objectives"
+              },
+              {
+                step: "04",
+                title: "Refinement",
+                description: "Revisions and optimization based on your feedback"
+              }
+            ].map((process, index) => (
+              <div key={index} className="text-center">
+                <div className="w-16 h-16 bg-accent-blue text-white rounded-full flex items-center justify-center mx-auto mb-4 font-heading font-bold text-lg">
+                  {process.step}
+                </div>
+                <h4 className="font-heading font-semibold text-lg text-primary mb-2">{process.title}</h4>
+                <p className="text-muted-foreground font-body text-sm">{process.description}</p>
+              </div>
+            ))}
+          </div>
         </div>
       </div>
     </section>
